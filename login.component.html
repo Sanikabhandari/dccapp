@@ -1,0 +1,174 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="login.component.css">
+<!-- <link rel="stylesheet" href="login.component.css"> -->
+<head>
+    <title>login</title>
+    <!-- <script type="text/javascript">
+
+        var dict = { tanay : "Tanay@123" , 
+                     susheel : "Susheel@123" , 
+                     
+                    };
+
+
+                    
+        
+            
+
+    </script> -->
+</head>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> -->
+  
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a [routerLink]="['..']" a class="nav-link" href="#">home</a>
+          </li>
+        <li class="nav-item active">
+          <a [routerLink]="['/comp']"  class="nav-link" href="#">link1
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        
+        <li class="nav-item">
+          <a [routerLink]="['/comp2']" class="nav-link" href="#" id="link3">{{b}}</a>
+          
+        </li>
+      
+      </ul>
+      
+    </div>
+    
+  </nav>
+  <router-outlet></router-outlet> 
+
+      
+<body>
+   
+<ng-container *ngIf="reg">
+    <div id="login" >
+        
+        
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12"> 
+                        <!-- <form id="login-form" class="form" action="" method="post"> -->
+                            <h3 id="123" style="color: rgb(0, 0, 0); text-align: center; ">Registration</h3>
+                            <div class="form-group">
+                                <label for="username" style="color: rgb(0, 0, 0); font-size: 20px;">Username:</label><br>
+                                <input type="text" name="username" id="username1" class="form-control"required >
+                                <!-- <input type="number" [(ngModel)] = "a"> -->
+                            </div>
+                            <div class="form-group">
+                                <label for="password" style="color: rgb(0, 0, 0);  font-size: 20px;">Password:</label><br>
+                               
+                                
+                                <input id="password" type="password" [(ngModel)] = "a1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="A password should contains at least eight characters, including at least one number and includes both lower and uppercase letters and special characters" class="form-control" >
+                                <label for="password" style="color: rgb(0, 0, 0);  font-size: 20px;"> Confirm Password:</label><br>
+                                <!-- <input id="password1" type="password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="A password should contains at least eight characters, including at least one number and includes both lower and uppercase letters and special characters" class="form-control" > -->
+                                <input id="password1" type="password" [(ngModel)] = "pa" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="A password should contains at least eight characters, including at least one number and includes both lower and uppercase letters and special characters" class="form-control" >
+                                
+                                    <!-- <h1>password:{{pa}}</h1> -->
+                            
+                            
+                            </div>
+                            
+                           
+                            <!-- <label for="Male">Male</label> -->
+                            
+                            <div class="form-group" >
+                                <label for="remember-me" class="text-info"></label><br>
+                                 <!-- <input type="submit" name="submit" class="btn btn-danger" value="submit" onclick=""> -->
+                                 <button (click) = "checkreg()" class="btn btn-danger">Submit</button>
+                               
+                                <div class="table-responsive-sm" id="div1">
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                        <!-- </form> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br><br><br><br><br>
+    </div>
+
+</ng-container>
+
+<ng-container *ngIf="visible">
+    <div id="login" >
+        
+        
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12"> 
+                       
+                            <h3 id="123" style="color: rgb(0, 0, 0); text-align: center; ">Login</h3>
+                            <div class="form-group">
+                                <label for="username" style="color: rgb(0, 0, 0); font-size: 20px;">Username:</label><br>
+                                <input type="text" name="username" [(ngModel)] = "user" id="username1" class="form-control"required >
+                               
+                            </div>
+                            <div class="form-group">
+                                <label for="password" style="color: rgb(0, 0, 0);  font-size: 20px;">Password:</label><br>
+                               
+                                <input id="password1" type="password" [(ngModel)] = "a" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="A password should contains at least eight characters, including at least one number and includes both lower and uppercase letters and special characters" class="form-control" >
+                                
+                                 
+                                
+                            
+                            
+                            </div>
+                            
+                           
+                            
+                            
+                            <div class="form-group" >
+                                <label for="remember-me" class="text-info"></label><br>
+                                  
+                                 <button (click) = "check()" class="btn btn-danger">Submit</button>
+                               
+                                <div class="table-responsive-sm" id="div1">
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br><br><br><br><br>
+    </div>
+
+</ng-container>
+ <ng-container *ngIf="wel">
+    <br><br> 
+<h3 style="margin-left: 40% ;">Welcome:{{user}}</h3>
+
+</ng-container>
+</body> 
+
+
+<!-- 
+<a routerLink="/comp2"><button class="btn btn-success" > Submit </button></a>
+
+     <a [routerLink]="['..']" style="font-size: 20px;">home </a>
+      <router-outlet></router-outlet> </p>
+     -->
+
+
+
+
+     <!-- <input type="number" [(ngModel)] = "a"> -->
